@@ -1,6 +1,5 @@
-*Docker Workshop*
-------------------
-
+Docker Workshop
+-------------------------------------------
 
 Exercise - 1
 --------------
@@ -18,23 +17,23 @@ Exercise - 2
 
 
 $: docker build -f Dockerfile.git -t sreehari/git . 
-$: docker run -v /Users/sreeharikm/test:/test sreehari/git sh -c "cd /test;git init"
+$: docker run -v /Users/sreeharikm/test:/test sreehari/git git init
 
 
-
-Exercise - 3
+Exercise - 3:1
 --------------------
 * Create an Image which can run npm install. Create a package.json and copy it inside the image. Run this image and note if the dependencies are installed every time. Why?
 * Change the Image to install the dependencies in the Image itself.
 * Share the node_modules folder when running the container so that npm runs inside the container but the dependencies get installed outside.
 
-$: docker build Dockerfile.npm1 -t sreehari/npm1 .
-$: docker run -v /Users/sreeharikm/Docker/node_modules:/app/node_modules sreehari/npm1 npm install
+$: docker build Dockerfile.npm -t sreehari/npm .
+$: docker run sreehari/npm npm install              // installs dependencies every time
+$: docker run -v /Users/sreeharikm/Docker/node_modules:/app/node_modules sreehari/npm npm install // uses packages from local node_modules. doesnt installs each time
 
 
-Exercise - 3:1
+Exercise - 3:2
 --------------------
 * Take the source at https://github.com/steotia/sample-nodejs and dockerize it to run on port 3000.
 
-$: docker build Dockerfile.npm1 -t sreehari/npm1 .
-$: docker run -p 3000:3000 sreehari/npm2
+$: docker build Dockerfile.nodeapp -t sreehari/nodeapp .
+$: docker run -p 3000:3000 sreehari/nodeapp
