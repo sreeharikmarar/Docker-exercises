@@ -1,0 +1,32 @@
+{
+  "name": "sample-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/**.spec.js --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steotia/sample-nodejs.git"
+  },
+  "author": "steotia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steotia/sample-nodejs/issues"
+  },
+  "homepage": "https://github.com/steotia/sample-nodejs#readme",
+  "dependencies": {
+    "chai": "^4.0.2",
+    "express": "^4.13.3",
+    "gulp-mocha": "^4.3.1",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gzip": "^1.4.0",
+    "gulp-tar": "^2.0.0",
+    "gulp-zip": "^4.0.0"
+  }
+}

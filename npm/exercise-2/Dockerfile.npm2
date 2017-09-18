@@ -1,0 +1,7 @@
+FROM mhart/alpine-node:8
+WORKDIR /app
+COPY /sample-nodejs/src	/app
+ENV APP_PORT 3000
+EXPOSE 3000
+RUN npm install
+CMD ["node", "app.js"]
